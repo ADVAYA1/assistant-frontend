@@ -2,7 +2,14 @@ import React, { Suspense, useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 // 1. FIXED THE IMPORT: Import the context object, not the provider
 import { userDataContext } from './Context/userContext.jsx';
-
+import cors from 'cors';
+import express from 'express';
+const app = express();
+app.use(cors({
+  // Add your Vercel frontend URL to this list
+  origin: ['http://localhost:5173', 'https://assistant-frontend-ecru.vercel.app'],
+  credentials: true
+}));
 // Lazy loaded components for code splitting
 const SignIn = React.lazy(() => import('./pages/SignIn.jsx'));
 const SignUp = React.lazy(() => import('./pages/SignUp.jsx'));
