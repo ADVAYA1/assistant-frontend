@@ -7,7 +7,7 @@ export const userDataContext = createContext();
 export function UserContextProvider({ children }) {
 
     // 2. FIXED the hardcoded URL to use environment variables for production
-    const serverUrl =  import.meta.env.VITE_API_URL ;
+    const serverUrl = "https://aivra-backend.onrender.com" ;
 
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true); // 3. ADDED a loading state
