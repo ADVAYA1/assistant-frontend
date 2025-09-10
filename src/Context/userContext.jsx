@@ -7,7 +7,7 @@ export const userDataContext = createContext();
 export function UserContextProvider({ children }) {
 
     // 2. FIXED the hardcoded URL to use environment variables for production
-    const serverUrl =  "http://localhost:8000" ||import.meta.env.VITE_API_URL ;
+    const serverUrl =  import.meta.env.VITE_API_URL ;
 
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true); // 3. ADDED a loading state
